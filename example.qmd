@@ -67,3 +67,14 @@ def function(name, default=None, *args, variable="1123", a, b, c, employee, offi
 ```
 
 
+## Example 5: IPython
+
+IPython syntax like a question mark for help or magic functions will break the Ruff parser:
+
+```{python}
+print?
+```
+
+This emits an error message and causes this code cell not to be formatted but
+doesn't otherwise cause a problem for other cells or the whole rendering
+process.
