@@ -1,0 +1,11 @@
+*.html
+*.pdf
+*_files/
+*.rproj
+.Rproj.user
+!docs/*
+.Rhistory
+test.qmd
+test_files/
+test.native
+.ruff_cache/

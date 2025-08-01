@@ -1,0 +1,69 @@
+---
+title: "Ruff-formatter Example"
+format: 
+  html:
+    code-tools: true
+jupyter: python3
+filters:
+  - ruff-formatter
+embed-resources: true
+---
+
+> Note: View the source of this document along with the original unformatted Python code by clicking `</> Code` on top-right corner to compare.
+
+## Example 1
+
+```{python}
+#| label: hello_world
+print (    'hello, world' )
+```
+
+## Example 2
+
+```{python}
+#| label: is_unique
+def is_unique(
+               s
+               ):
+    s = list(s
+                )
+    s.sort()
+ 
+ 
+    for i in range(len(s) - 1):
+        if s[i] == s[i + 1]:
+            return 0
+    else:
+        return 1
+```
+
+
+[Ruff defaults to 88 character per line](https://docs.astral.sh/ruff/settings/#line-length). But you can change this default behavior
+by specifying `line-length` in the `pyproject.toml` file.
+
+```{.toml filename='pyproject.toml'}
+[tool.ruff]
+line-length = 40
+```
+
+
+## Example 3
+
+This extension works on non executable code blocks (e.g. `{.python}`) too.
+
+
+```{.python}
+def example_function(arg_1: str, arg_2: bool, arg_3: int = 0, arg_4: int = 1, arg_5: float = 0.0):
+    pass
+```
+
+
+## Example 4
+
+```{.python #test_function}
+def function(name, default=None, *args, variable="1123", a, b, c, employee, office, d, e, f, **kwargs):
+    """This is function is created to demonstrate reformatting with Ruff"""
+    pass
+```
+
+
